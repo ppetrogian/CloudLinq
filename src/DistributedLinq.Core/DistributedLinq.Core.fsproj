@@ -32,6 +32,14 @@
     <DocumentationFile>bin\Release\DistributedLinq.Core.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LinqOptimizer.Base">
+      <HintPath>..\..\packages\LinqOptimizer.FSharp.0.5.2\lib\LinqOptimizer.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqOptimizer.FSharp">
+      <HintPath>..\..\packages\LinqOptimizer.FSharp.0.5.2\lib\LinqOptimizer.FSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
@@ -43,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Library1.fs" />
     <None Include="Script.fsx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
