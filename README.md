@@ -1,2 +1,2 @@
-LinqOptimizer.Distributed
+DistributedLinq
 =========================
