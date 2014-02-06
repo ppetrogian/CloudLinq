@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Nessos.MBrace.Client</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.MBrace">
+<summary>
+ This is an abbreviation for the MBraceRuntime type.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.PermittedSlave(System.Boolean)">
+<summary>
+Sets whether the node has slave permissions.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.PermittedMaster(System.Boolean)">
+<summary>
+Sets whether the node has master permissions.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.Permissions(Nessos.MBrace.Runtime.CommonAPI.Permissions)">
+<summary>
+Sets the node&apos;s permissions.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.Uri">
+<summary>
+Gets the node&apos;s uri.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.State">
+<summary>
+Gets the node&apos;s state.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.Process">
+<summary>
+Returns the System.Diagnostics.Process object for this node.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.PermittedSlave">
+<summary>
+Returns whether the node has slave permissions.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.PermittedMaster">
+<summary>
+Returns whether the node has master permissions.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.Permissions">
+<summary>
+Gets the node&apos;s permissions.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.IsLocal">
+<summary>
+Returns whether the node is local or not.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.IsActive">
+<summary>
+Returns whether the node is active or not.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceNode.DeploymentId">
+<summary>
+Returns a UUID bound to this node instance.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.SpawnMultiple(System.Int32,Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.String}},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Utils.LogLevel},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Runtime.CommonAPI.Permissions},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Client.StoreProvider})">
+<summary>Spawns a new {m}brace daemon (node).</summary>
+<param name="nodeCount">The number of nodes to spawn.</param>
+<param name="workerPortsPerNode">The number of worker ports for each node.</param>
+<param name="hostname">The hostname to be used by the node and the runtime.</param>
+<param name="logFiles">The files (path) to use for logging.</param>
+<param name="logLevel">The level of entries to be logged.</param>
+<param name="permissions">The permissions of the nodes.</param>
+<param name="serializerName">The name of the serializer to be used.</param>
+<param name="compressSerialization">Use compression during serialization.</param>
+<param name="debug">Run in Debug mode.</param>
+<param name="background">Spawn in the background.</param>
+<param name="storeProvider">The store provider to be used.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.SpawnAsync(Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Int32}},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.String}},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Utils.LogLevel},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Runtime.CommonAPI.Permissions},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Client.StoreProvider})">
+<summary>Spawns a new {m}brace daemon (node).</summary>
+<param name="hostname">The hostname to be used by the node and the runtime.</param>
+<param name="primaryPort">The port the node listens to.</param>
+<param name="workerPorts">The ports pool use by the {m}brace workers.</param>
+<param name="logFiles">The files (path) to use for logging.</param>
+<param name="logLevel">The level of entries to be logged.</param>
+<param name="permissions">The permissions of the node.</param>
+<param name="serializerName">The name of the serializer to be used.</param>
+<param name="compressSerialization">Use compression during serialization.</param>
+<param name="debug">Run in Debug mode.</param>
+<param name="workingDirectory">The working directory used by the node.</param>
+<param name="useTemporaryWorkDir">Use a temporary folder as a working directory.</param>
+<param name="background">Spawn in the background.</param>
+<param name="storeProvider">The store provider to be used.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.SpawnAsync(Microsoft.FSharp.Collections.FSharpList{Nessos.MBrace.Runtime.Daemon.Configuration.MBracedConfig},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Spawns a new {m}brace daemon (node).</summary>
+<param name="arguments">Typed command line arguments passed to the shell.</param>
+<param name="background">Spawn in the background.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.Spawn(Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Int32}},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.String}},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Utils.LogLevel},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Runtime.CommonAPI.Permissions},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Client.StoreProvider})">
+<summary>Spawns a new {m}brace daemon (node).</summary>
+<param name="hostname">The hostname to be used by the node and the runtime.</param>
+<param name="primaryPort">The port the node listens to.</param>
+<param name="workerPorts">The ports pool use by the {m}brace workers.</param>
+<param name="logFiles">The files (path) to use for logging.</param>
+<param name="logLevel">The level of entries to be logged.</param>
+<param name="permissions">The permissions of the node.</param>
+<param name="serializerName">The name of the serializer to be used.</param>
+<param name="compressSerialization">Use compression during serialization.</param>
+<param name="debug">Run in Debug mode.</param>
+<param name="workingDirectory">The working directory used by the node.</param>
+<param name="useTemporaryWorkDir">Use a temporary folder as a working directory.</param>
+<param name="background">Spawn in the background.</param>
+<param name="storeProvider">The store provider to be used.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.Spawn(System.String[],Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Spawns a new {m}brace daemon (node).</summary>
+<param name="arguments">command line arguments passed to the shell.</param>
+<param name="background">Spawn in the background.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.ShowLogs(Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>
+Prints the system logs for this node.
+&lt;param name=&quot;clear&quot;&gt;Deletes the logs.&lt;/param&gt;
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.PrettyPrint(Microsoft.FSharp.Collections.FSharpList{Nessos.MBrace.Client.MBraceNode},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Prints information on the given collection of nodes.</summary>
+<param name="displayPerfCounters">Display performance information.</param>
+<param name="header">Specify a header for the table.</param>
+<param name="useBorders">Enable fancy mySQL-like bordering.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.Ping(Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>Send a ping message to the node and return the number of milliseconds of the roundtrip.</summary>
+<param name="silent">Does not print a PING log in the system logs.</param>
+<param name="timeout">Timeout in milliseconds.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.Kill">
+<summary>
+Kills violently this node. The node must be local.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.GetPerformanceCounters">
+<summary>
+Gets usage statistics for this node.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.GetLogs(Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>
+Get all the system logs from this node.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.#ctor(System.String,System.Int32)">
+<summary>
+Create a new MBraceNode object. No node is spawned.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.#ctor(System.String)">
+<summary>
+Create a new MBraceNode object. No node is spawned.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceNode.#ctor(System.Uri)">
+<summary>
+Create a new MBraceNode object. No node is spawned.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.MBraceNode">
+<summary>
+The type representing a {m}brace node.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceRuntime.Nodes">
+<summary>
+Gets the list of nodes composing the current runtime.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceRuntime.Master">
+<summary>
+Get master node of the current runtime.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceRuntime.LocalNodes">
+<summary>
+Gets a list of the local MBraceNodes.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceRuntime.Id">
+<summary>
+Gets the identifier of the runtime.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceRuntime.Alts">
+<summary>
+Gets a list of the alternative master nodes.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceRuntime.Active">
+<summary>
+Returns if the current runtime is active or not.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ShutdownAsync">
+<summary>
+Shutdown the current runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Shutdown">
+<summary>
+Shutdown the current runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ShowUserLogs(System.Int32,Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Prints the user logs (logs generated by using log and trace combinators)
+of a specific process.</summary>
+<param name="pid">The process's id.</param>
+<param name="clear">Deletes the user logs for this process.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ShowProcessInfo(Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Prints information about processes running in the current runtime.</summary>
+<param name="useBorders">Enable fancy mySQL-like bordering.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ShowLogs(Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Prints the system logs.</summary>
+<param name="clear">Deletes the logs.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ShowInfo(Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Prints information about the current runtime (nodes, etc).</summary>
+<param name="showPerformanceCounters">Prints performance information (CPU usage, etc)
+of all the nodes.</param>
+<param name="useBorders">Prints entries in fancy mySQL-like borders.</param>
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.RunAsync``1(Microsoft.FSharp.Quotations.FSharpExpr{Nessos.MBrace.ICloud{``0}},Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>Run the given cloud computation. This method blocks until the process has completed.</summary>
+<param name="name">Use a custom name for the process.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.RunAsync``1(Nessos.MBrace.Client.CloudComputation{``0})">
+<summary>
+Run the given cloud computation. This method blocks until the process has completed.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Run``1(Microsoft.FSharp.Quotations.FSharpExpr{Nessos.MBrace.ICloud{``0}},Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>Run the given cloud computation. This method blocks until the process has completed.</summary>
+<param name="name">Use a custom name for the process.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Run``1(Nessos.MBrace.Client.CloudComputation{``0})">
+<summary>
+Run the given cloud computation. This method blocks until the process has completed.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Reboot">
+<summary>Reboots the current runtime.</summary>       
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Reboot(Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>Reboots the current runtime.</summary>
+<param name = "replicationFactor">The replication factor of the runtime.</param>
+<param name = "failoverFactor">The failover factor of the runtime.</param>            
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Ping(Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>Send a ping message to the runtime and return the number of milliseconds of the roundtrip.</summary>
+<param name="silent">Does not print a PING log in the system logs.</param>
+<param name="timeout">Timeout in milliseconds.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.KillProcess(System.Int32)">
+<summary>
+Kill the process with the specified id.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Kill">
+<summary>
+Kills violently the nodes and the runtime. 
+This method should be used only for local runtimes.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.InitLocal(System.Int32,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Client.StoreProvider},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Creates and boots a local MBraceRuntime using the specified configuration.
+Most of these options can also be set from the configuration files.</summary>
+<param name = "totalNodes">The number of local nodes to spawn.</param>
+<param name = "hostname">The hostname that the nodes will use.</param>
+<param name = "storeProvider">The provider that will be used by the underlying store.</param>
+<param name = "debug">Run in debug mode.</param>
+<param name = "background">Spawn the local nodes in the background.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.InitLocal(System.Int32,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{Nessos.MBrace.Client.StoreProvider},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Creates and boots a local MBraceRuntime using the specified configuration.
+Most of these options can also be set from the configuration files.</summary>
+<param name = "totalNodes">The number of local nodes to spawn.</param>
+<param name = "hostname">The hostname that the nodes will use.</param>
+<param name = "replicationFactor">The replication factor of the runtime.</param>
+<param name = "failoverFactor">The failover factor of the runtime.</param>
+<param name = "storeProvider">The provider that will be used by the underlying store.</param>
+<param name = "debug">Run in debug mode.</param>
+<param name = "background">Spawn the local nodes in the background.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.GetUserLogs(System.Int32,Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Get the user logs (created with the log and trace combinators) for 
+the specified process.</summary>
+<param name="pid">The process's id.</param>
+<param name="clear">Delete the logs.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.GetProcess``1(System.String)">
+<summary>
+Get the process with the specified id.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.GetProcess(System.String)">
+<summary>
+Get the process with the specified id.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.GetProcess``1(System.Int32)">
+<summary>
+Get the process with the specified id.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.GetProcess(System.Int32)">
+<summary>
+Get the process with the specified id.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.GetLogs(Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Get the system logs.</summary>
+<param name="clear">Delete the logs.</param>
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.GetAllProcesses">
+<summary>
+Gets all processes.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Echo``1(``0)">
+<summary>
+Sends and receives a value.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.DeleteContainerAsync(System.Int32)">
+<summary>Deletes the container for the process from the underlying store.</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.DeleteContainerAsync(System.String)">
+<summary>Deletes a container (folder) from the underlying store.</summary>
+<param name="container">The container to delete.</param>            
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.DeleteContainer(System.Int32)">
+<summary>Deletes the container for the process from the underlying store.</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.DeleteContainer(System.String)">
+<summary>Deletes a container (folder) from the underlying store.</summary>
+<param name="container">The container to delete.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.CreateProcess``1(Microsoft.FSharp.Quotations.FSharpExpr{Nessos.MBrace.ICloud{``0}},Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>Creates a new process to run the given cloud computation. This method does not wait for the process to complete.</summary>
+<param name="expr">The computation to run.</param>
+<param name="name">Use a custom name for the process.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.CreateProcess``1(Nessos.MBrace.Client.CloudComputation{``0})">
+<summary>Creates a new process to run the given cloud computation. This method does not wait for the process to complete.</summary>
+<param name="computation">The computation to run.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ConnectAsync(System.String)">
+<summary>Connect to an existing runtime.</summary>
+<param name="uri">The Uri of a node that belongs to the runtime.</param>            
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ConnectAsync(System.Uri)">
+<summary>Connect to an existing runtime.</summary>
+<param name="uri">The Uri of a node that belongs to the runtime.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Connect(System.String,System.Int32)">
+<summary>Connect to an existing runtime.</summary>
+<param name="host">The hostname of a node that belongs to the runtime.</param>
+<param name="port">The port of a node that belongs to the runtime.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Connect(System.String)">
+<summary>Connect to an existing runtime.</summary>
+<param name="uri">The Uri of a node that belongs to the runtime.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Connect(System.Uri)">
+<summary>Connect to an existing runtime.</summary>
+<param name="uri">The Uri of a node that belongs to the runtime.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ClearProcessInfo(System.String)">
+<summary>
+Clears the process&apos;s information from the runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ClearProcessInfo(System.Int32)">
+<summary>
+Clears the process&apos;s information from the runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.ClearAllProcessInfo">
+<summary>
+Clears all processes&apos; information from the runtime.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.BootAsync">
+<summary>
+Boots the current runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.BootAsync(Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+Boots the current runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Boot(Microsoft.FSharp.Collections.FSharpList{System.String})">
+<summary>Boots a {m}brace runtime.</summary>
+<param name="uris">A list of Uris of nodes to use in order to boot the runtime.</param>   
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Boot(Microsoft.FSharp.Collections.FSharpList{System.String},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>Boots a {m}brace runtime.</summary>
+<param name="uris">A list of Uris of nodes to use in order to boot the runtime.</param>
+<param name = "replicationFactor">The replication factor of the runtime.</param>
+<param name = "failoverFactor">The failover factor of the runtime.</param>     
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Boot(Microsoft.FSharp.Collections.FSharpList{System.Uri})">
+<summary>Boots a {m}brace runtime.</summary>
+<param name="uris">A list of Uris of nodes to use in order to boot the runtime.</param>        
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Boot(Microsoft.FSharp.Collections.FSharpList{System.Uri},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>Boots a {m}brace runtime.</summary>
+<param name="uris">A list of Uris of nodes to use in order to boot the runtime.</param>
+<param name = "replicationFactor">The replication factor of the runtime.</param>
+<param name = "failoverFactor">The failover factor of the runtime.</param>            
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Boot(Microsoft.FSharp.Collections.FSharpList{Nessos.MBrace.Client.MBraceNode})">
+<summary>Boots a {m}brace runtime.</summary>
+<param name="nodes">A list of MBraceNodes to use in order to boot the runtime.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Boot(Microsoft.FSharp.Collections.FSharpList{Nessos.MBrace.Client.MBraceNode},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>Boots a {m}brace runtime.</summary>
+<param name="nodes">A list of MBraceNodes to use in order to boot the runtime.</param>
+<param name = "replicationFactor">The replication factor of the runtime.</param>
+<param name = "failoverFactor">The failover factor of the runtime.</param>
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Boot">
+<summary>
+Boots the current runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceRuntime.Boot(Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+Boots the current runtime.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.MBraceRuntime">
+<summary>
+ The type responsible for the {m}brace runtime booting, management,
+ process creation, etc.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.StoreProvider(Nessos.MBrace.Client.StoreProvider)">
+<summary>
+Gets or sets the StoreProvider used by the client.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.MBracedExecutablePath(System.String)">
+<summary>
+The (relative/absolute) path to the mbraced.exe.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.LocalCachePath(System.String)">
+<summary>
+The path that will be used as a local cache by the client. CloudRefs/CloudSeqs
+may be cached there.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.ClientSideExpressionCheck(System.Boolean)">
+<summary>
+Turns on or off the client side expression checking.
+Turning this on will make expression checks happen at the client rather
+than the runtime.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.AssemblyCachePath(System.String)">
+<summary>
+Gets the path where the dependent assemblies are saved.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.StoreProvider">
+<summary>
+Gets or sets the StoreProvider used by the client.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.MBracedExecutablePath">
+<summary>
+The (relative/absolute) path to the mbraced.exe.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.LocalCachePath">
+<summary>
+The path that will be used as a local cache by the client. CloudRefs/CloudSeqs
+may be cached there.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.ClientSideExpressionCheck">
+<summary>
+Turns on or off the client side expression checking.
+Turning this on will make expression checks happen at the client rather
+than the runtime.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.ClientId">
+<summary>
+Gets the client&apos;s unique identifier.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.MBraceSettings.AssemblyCachePath">
+<summary>
+Gets the path where the dependent assemblies are saved.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.MBraceSettings.TryGetStoreProvider">
+<summary>
+Gets the Store Provider currently used by the client.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.MBraceSettings">
+<summary>
+ The object representing the {m}brace client settings.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.NoWarnAttribute">
+<summary>
+ Disable warnings for specified cloud block
+</summary>
+</member>
+<member name="T:Nessos.MBrace.Client.Node">
+<summary>
+ This is an abbreviation to the MBraceNode type.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Nessos.MBrace.Client.Process.Workers">
+<summary>
+Gets the number of workers currently used by the process.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.Process.Tasks">
+<summary>
+The number of tasks currently created by the process.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.Process.ReturnType">
+<summary>
+Get the process&apos;s return type.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.Process.Result">
+<summary>
+Gets the process&apos;s result.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Nessos.MBrace.Client.Process.ProcessId">
+<summary>
+Gets the process&apos;s identifier.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.Process.Name">
+<summary>
+Gets the process&apos;s name.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.Process.InitTime">
+<summary>
+Gets the process&apos;s start time.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.Process.ExecutionTime">
+<summary>
+Gets the process&apos;s execution time.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Client.Process.Complete">
+<summary>
+Gets whether the process if complete or not.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.Process.TryGetResultBoxed">
+<summary>
+Tries to get the process&apos;s result.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.Process.ShowInfo(Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>Prints information about the process.</summary>
+<param name="useBorders">Enable fancy mySQL-like bordering.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.Process.Kill">
+<summary>
+Kills the current process.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.Process.Cast``1(Nessos.MBrace.Client.Process)">
+<summary>
+Cast to a strongly typed process.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.Process.Cast``1">
+<summary>
+Cast to a strongly typed process.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.Process.AwaitResultBoxedAsync(Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>Wait for the process's result.</summary>
+<param name="pollingInterval">The number of milliseconds to poll for a result.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.Process.AwaitResultBoxed">
+<summary>
+Wait for the process&apos;s result.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.Process">
+<summary>
+The type representing a process submitted to the runtime.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.Process`1.TryGetResult``1">
+<summary>
+Tries to get the process&apos;s result.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.Process`1.AwaitResultAsync``1(Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>Waits for the process's result.</summary>
+<param name="pollingInterval">The number of milliseconds to poll for a result.</param>
+</member>
+<member name="M:Nessos.MBrace.Client.Process`1.AwaitResult``1">
+<summary>
+Wait for the process&apos;s result.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.Process`1">
+<summary>
+The type representing a process submitted to the runtime.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.ClientExtensions.MBrace.RunRemote``1(Nessos.MBrace.Client.MBraceRuntime,Microsoft.FSharp.Quotations.FSharpExpr{Nessos.MBrace.ICloud{``0}})">
+<summary>
+ Runs a computation at the given runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.ClientExtensions.MBrace.RunLocalAsync``1(Nessos.MBrace.ICloud{``0})">
+<summary>
+ Runs the given computation locally without the need of a runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.ClientExtensions.MBrace.RunLocal``1(Nessos.MBrace.ICloud{``0})">
+<summary>
+ Runs the given computation locally without the need of a runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Client.ClientExtensions.MBrace.CreateProcess``1(Nessos.MBrace.Client.MBraceRuntime,Microsoft.FSharp.Quotations.FSharpExpr{Nessos.MBrace.ICloud{``0}})">
+<summary>
+ Creates a new process at the given runtime.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.ClientExtensions">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.CloudComputationUtils">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.Error">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Client.Logs.show(System.Collections.Generic.IEnumerable{Nessos.MBrace.Utils.LogEntry})">
+<summary>
+Prints a sequence of LogEntry objects.
+</summary>
+</member>
+<member name="T:Nessos.MBrace.Client.Logs">
+<summary>
+The module responsible for the LogEntry type.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.ProcessInfo">
+
+</member>
+<member name="T:Nessos.MBrace.Client.ProcessResultModule.ProcessResult">
+<summary>
+Represents the result of a process (pending, value, etc).
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.ProcessResultModule.ProcessResult`1">
+<summary>
+Represents the result of a process (pending, value, etc).
+</summary>
+</member>
+<member name="T:Nessos.MBrace.Client.ProcessResultModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Client.QuotationAnalysis">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Runtime.RuntimeExtensions">
+
+</member>
+</members>
+</doc>
