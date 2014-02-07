@@ -6,7 +6,7 @@ open CloudLinq.Core
 open LinqOptimizer.Core
 open Microsoft.FSharp.Quotations
 
-module MBraceCompiler =
+module MBraceQueryCompiler =
 
     let initLocalRuntime(nodes : int) =
         MBrace.InitLocal(nodes)
@@ -17,9 +17,15 @@ module MBraceCompiler =
         f.Invoke
 
     [<Cloud>]
-    let compile<'T>(expr : CloudQueryExpr) : Expr<ICloud<'T>> =
-        <@ cloud { 
+    let compile<'T>(expr : CloudQueryExpr) : ICloud<'T> =
+        cloud { 
+            System.IO.File.WriteAllText(@"c:\users\konstantinos\desktop\1.txt", sprintf "Compiling CloudQueryExpr %A" expr)
             let f = compile_aux(expr)   
+            System.IO.File.WriteAllText(@"c:\users\konstantinos\desktop\2.txt", sprintf "Compiled" )
             return f() 
             //return Unchecked.defaultof<'T>
-        } @>
+        }
+
+    [<Cloud>]
+    let compileAsExpr<'T>(expr : CloudQueryExpr) =
+        <@ compile<'T>(expr) @>

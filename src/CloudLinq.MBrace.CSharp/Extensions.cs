@@ -23,7 +23,7 @@ namespace CloudLinq.MBrace.CSharp
             MBraceSettings.MBracedExecutablePath = path;
             MBraceSettings.StoreProvider = StoreProvider.LocalFS;
 
-            return MBraceRuntime.InitLocal(10, 
+            return MBraceRuntime.InitLocal(nodes, 
                         FSharpOption<string>.None,
                         FSharpOption<StoreProvider>.None,
                         FSharpOption<bool>.None,
@@ -32,7 +32,7 @@ namespace CloudLinq.MBrace.CSharp
 
         public static T RunInDaCloud<T>(this ICloudQueryExpr<T> query, MBraceRuntime runtime)
         {
-            var expr = MBraceCompiler.compile<T>(query.Expr);
+            var expr = MBraceQueryCompiler.compileAsExpr<T>(query.Expr);
             return runtime.Run<T>(expr, FSharpOption<string>.None);
         }
         
@@ -50,6 +50,11 @@ namespace CloudLinq.MBrace.CSharp
             return new CloudQueryExpr<IEnumerable<TSource>>(cq);
         }
 
+        public static ICloudQueryExpr<IEnumerable<int>> Range(int start, int count)
+        {
+            var cq = CloudQueryExpr.NewRangeGenerator(Expression.Constant(start).AsSerializable(), Expression.Constant(count).AsSerializable());
+            return new CloudQueryExpr<IEnumerable<int>>(cq);
+        }
 
         #region Combinators
         /// <summary>

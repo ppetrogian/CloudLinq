@@ -12,9 +12,9 @@ namespace CloudLinq.MBrace.CSharp.Tests
     {
         static void Main(string[] args)
         {
-            var rt = Extensions.InitLocal(8, @"C:\data\repositories\CloudLinq\lib\mbraced.exe");
+            var rt = Extensions.InitLocal(3, @"C:\data\repositories\CloudLinq\lib\mbraced.exe");
 
-            var q = Enumerable.Range(1, 10).AsCloudQueryExpr().Select(x => x * x);
+            var q = Extensions.Range(1,10).Select(x => x * x);
 
             var r = q.RunInDaCloud(rt);
         }
