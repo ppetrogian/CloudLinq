@@ -5,12 +5,12 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>eef5e23c-3977-458b-b8c1-3a8e79edd526</ProjectGuid>
+    <ProjectGuid>6a58351f-215a-4547-ba8e-8c0e617a4bce</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>DistributedLinq.Core</RootNamespace>
-    <AssemblyName>CloudLinq.Core</AssemblyName>
+    <RootNamespace>CloudLinq.MBrace</RootNamespace>
+    <AssemblyName>CloudLinq.MBrace</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <Name>CloudLinq.Core</Name>
+    <Name>CloudLinq.MBrace</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,7 +20,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\DistributedLinq.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\CloudLinq.MBrace.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,7 +29,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\DistributedLinq.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\CloudLinq.MBrace.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LinqOptimizer.Base">
@@ -47,19 +47,42 @@
     <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="Serialize.Linq">
-      <HintPath>..\..\packages\Serialize.Linq.1.1.4\lib\net45\Serialize.Linq.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Nessos.MBrace">
+      <HintPath>..\..\lib\Nessos.MBrace.dll</HintPath>
+    </Reference>
+    <Reference Include="Nessos.MBrace.Actors">
+      <HintPath>..\..\lib\Nessos.MBrace.Actors.dll</HintPath>
+    </Reference>
+    <Reference Include="Nessos.MBrace.Client">
+      <HintPath>..\..\lib\Nessos.MBrace.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Nessos.MBrace.Common">
+      <HintPath>..\..\lib\Nessos.MBrace.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Nessos.MBrace.Core">
+      <HintPath>..\..\lib\Nessos.MBrace.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Nessos.MBrace.Store">
+      <HintPath>..\..\lib\Nessos.MBrace.Store.dll</HintPath>
+    </Reference>
+    <Reference Include="Nessos.MBrace.Utils">
+      <HintPath>..\..\lib\Nessos.MBrace.Utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SerializableExpression.fs" />
-    <Compile Include="CloudQueryExpr.fs" />
+    <Compile Include="Compiler.fs" />
     <None Include="Script.fsx" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CloudLinq.Core\CloudLinq.Core.fsproj">
+      <Name>CloudLinq.Core</Name>
+      <Project>{eef5e23c-3977-458b-b8c1-3a8e79edd526}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
