@@ -10,7 +10,7 @@
     <RootNamespace>DistributedLinq.Core</RootNamespace>
     <AssemblyName>DistributedLinq.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <Name>DistributedLinq.Core</Name>
+    <Name>CloudLinq.Core</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

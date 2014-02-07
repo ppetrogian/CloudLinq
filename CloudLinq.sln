@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A589536E-1C85-4209-86A2-8A315D4683E2}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "DistributedLinq.Core", "src\DistributedLinq.Core\DistributedLinq.Core.fsproj", "{EEF5E23C-3977-458B-B8C1-3A8E79EDD526}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CloudLinq.Core", "src\CloudLinq.Core\CloudLinq.Core.fsproj", "{EEF5E23C-3977-458B-B8C1-3A8E79EDD526}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bin", "bin", "{6B4BBCD9-CECE-4C54-9E32-9D74E484A08E}"
 	ProjectSection(SolutionItems) = preProject
