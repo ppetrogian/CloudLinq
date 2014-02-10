@@ -30,7 +30,7 @@ namespace CloudLinq.MBrace.CSharp
                         FSharpOption<bool>.None);
         }
 
-        public static T RunInDaCloud<T>(this ICloudQueryExpr<T> query, MBraceRuntime runtime)
+        public static T Run<T>(this ICloudQueryExpr<T> query, MBraceRuntime runtime)
         {
             var expr = MBraceQueryCompiler.compileAsExpr<T>(query.Expr);
             return runtime.Run<T>(expr, FSharpOption<string>.None);

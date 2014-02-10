@@ -19,11 +19,8 @@ module MBraceQueryCompiler =
     [<Cloud>]
     let compile<'T>(expr : CloudQueryExpr) : ICloud<'T> =
         cloud { 
-            System.IO.File.WriteAllText(@"c:\users\konstantinos\desktop\1.txt", sprintf "Compiling CloudQueryExpr %A" expr)
             let f = compile_aux(expr)   
-            System.IO.File.WriteAllText(@"c:\users\konstantinos\desktop\2.txt", sprintf "Compiled" )
             return f() 
-            //return Unchecked.defaultof<'T>
         }
 
     [<Cloud>]
