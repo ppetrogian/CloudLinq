@@ -19,7 +19,7 @@ namespace CloudLinq.MBrace.CSharp.Tests
         {
             var rt = Extensions.InitLocal(3, @"C:\dev\github-repositories\CloudLinq\lib\mbraced.exe");
 
-            var q = Extensions.Range(1,10).Select(x => sqr(x));
+            var q = Extensions.Range(1,10).Select(x => x * x);
 
             var r = q.Run(rt);
         }
