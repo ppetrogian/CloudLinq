@@ -5,6 +5,7 @@ open LinqOptimizer.Base
 open LinqOptimizer.Core
 
 open System
+open System.Reflection
 open System.Linq.Expressions
 open System.Runtime.Serialization
 
@@ -41,37 +42,37 @@ type CloudQueryExpr =
 
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
 module CloudQueryExpr =
-    let private serializable expr = new SerializableExpression(expr)
+    //let private serializable expr = new SerializableExpression(expr)
     let lam (expr : SerializableExpression) = expr.Expression :?> LambdaExpression
     let param (expr : SerializableExpression) = expr.Expression :?> ParameterExpression
 
-    let ofQueryExpr(expr : QueryExpr) =
-        let rec transform (expr : QueryExpr) : CloudQueryExpr =
-            match expr with
-            | QueryExpr.Source(e, t, qt)                        -> Source(serializable e, t, qt)                    
-            | QueryExpr.Generate(e1, e2, e3, e4)                -> Generate(serializable e1,serializable  e2,serializable  e3,serializable  e4)           
-            | QueryExpr.Transform(e, q)                         -> Transform(serializable e, transform q)                    
-            | QueryExpr.TransformIndexed(e, q)                  -> TransformIndexed(serializable e, transform q)             
-            | QueryExpr.Filter(e, q)                            -> Filter(serializable e, transform q)                       
-            | QueryExpr.FilterIndexed(e, q)                     -> FilterIndexed(serializable e, transform q)                
-            | QueryExpr.NestedQuery((e, q), q')                 -> NestedQuery((serializable e, transform q), transform q')            
-            | QueryExpr.NestedQueryTransform((e,q), e', q')     -> NestedQueryTransform((serializable e, transform q),serializable  e',transform q')
-            | QueryExpr.Aggregate(e1, e2, q)                    -> Aggregate(serializable e1,serializable  e2,transform  q)               
-            | QueryExpr.Sum(q)                                  -> Sum(transform q)                             
-            | QueryExpr.Count(q)                                -> Count(transform q)                           
-            | QueryExpr.Take(e,q)                               -> Take(serializable e,transform q)                          
-            | QueryExpr.TakeWhile(e,q)                          -> TakeWhile(serializable e,transform q)                     
-            | QueryExpr.SkipWhile(e,q)                          -> SkipWhile(serializable e,transform q)                     
-            | QueryExpr.Skip(e,q)                               -> Skip(serializable e,transform q)                          
-            | QueryExpr.ForEach(e,q)                            -> ForEach(serializable e,transform q)                       
-            | QueryExpr.GroupBy(e,q,t)                          -> GroupBy(serializable e,transform q,t)                     
-            | QueryExpr.OrderBy(ls, q)                          -> let ls = ls |> List.map (fun (e,o) -> (serializable e, o)) in OrderBy(ls, transform q)                     
-            | QueryExpr.ToList(q)                               -> ToList(transform q)                          
-            | QueryExpr.ToArray(q)                              -> ToArray(transform q)                         
-            | QueryExpr.RangeGenerator(e1, e2)                  -> RangeGenerator(serializable e1,serializable e2)             
-            | QueryExpr.RepeatGenerator(e1, e2)                 -> RepeatGenerator(serializable e1,serializable e2)            
-            | QueryExpr.ZipWith(e1, e2, e3)                     -> ZipWith(serializable e1,serializable e2,serializable e3)                
-        transform expr
+//    let ofQueryExpr(expr : QueryExpr) =
+//        let rec transform (expr : QueryExpr) : CloudQueryExpr =
+//            match expr with
+//            | QueryExpr.Source(e, t, qt)                        -> Source(serializable e, t, qt)                    
+//            | QueryExpr.Generate(e1, e2, e3, e4)                -> Generate(serializable e1,serializable  e2,serializable  e3,serializable  e4)           
+//            | QueryExpr.Transform(e, q)                         -> Transform(serializable e, transform q)                    
+//            | QueryExpr.TransformIndexed(e, q)                  -> TransformIndexed(serializable e, transform q)             
+//            | QueryExpr.Filter(e, q)                            -> Filter(serializable e, transform q)                       
+//            | QueryExpr.FilterIndexed(e, q)                     -> FilterIndexed(serializable e, transform q)                
+//            | QueryExpr.NestedQuery((e, q), q')                 -> NestedQuery((serializable e, transform q), transform q')            
+//            | QueryExpr.NestedQueryTransform((e,q), e', q')     -> NestedQueryTransform((serializable e, transform q),serializable  e',transform q')
+//            | QueryExpr.Aggregate(e1, e2, q)                    -> Aggregate(serializable e1,serializable  e2,transform  q)               
+//            | QueryExpr.Sum(q)                                  -> Sum(transform q)                             
+//            | QueryExpr.Count(q)                                -> Count(transform q)                           
+//            | QueryExpr.Take(e,q)                               -> Take(serializable e,transform q)                          
+//            | QueryExpr.TakeWhile(e,q)                          -> TakeWhile(serializable e,transform q)                     
+//            | QueryExpr.SkipWhile(e,q)                          -> SkipWhile(serializable e,transform q)                     
+//            | QueryExpr.Skip(e,q)                               -> Skip(serializable e,transform q)                          
+//            | QueryExpr.ForEach(e,q)                            -> ForEach(serializable e,transform q)                       
+//            | QueryExpr.GroupBy(e,q,t)                          -> GroupBy(serializable e,transform q,t)                     
+//            | QueryExpr.OrderBy(ls, q)                          -> let ls = ls |> List.map (fun (e,o) -> (serializable e, o)) in OrderBy(ls, transform q)                     
+//            | QueryExpr.ToList(q)                               -> ToList(transform q)                          
+//            | QueryExpr.ToArray(q)                              -> ToArray(transform q)                         
+//            | QueryExpr.RangeGenerator(e1, e2)                  -> RangeGenerator(serializable e1,serializable e2)             
+//            | QueryExpr.RepeatGenerator(e1, e2)                 -> RepeatGenerator(serializable e1,serializable e2)            
+//            | QueryExpr.ZipWith(e1, e2, e3)                     -> ZipWith(serializable e1,serializable e2,serializable e3)                
+//        transform expr
 
     let toQueryExpr(expr : CloudQueryExpr) =
         let rec transform (expr : CloudQueryExpr) : QueryExpr =

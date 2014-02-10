@@ -24,12 +24,30 @@ open System
 open System.Linq.Expressions
 open System.Runtime.Serialization
 
+open Serialize.Linq
+open Serialize.Linq.Interfaces
+open Serialize.Linq.Extensions
+open Serialize.Linq.Nodes
+open Serialize.Linq.Serializers
+
 let rt = MBrace.InitLocal 4
 
+type Helper =
+    static member ofFunc(f : Expression<Func<'T,'R>>) = f
+
+let f x = x + 1
+type Foo =
+    static member F(x : int) = x * x
+
 let i = Query.range(1,10) 
-        |> Query.map(fun x -> x * x)
+        |> Query.map(fun x -> f x)
 
 let cq = CloudQueryExpr.ofQueryExpr(i.Expr)
+let e = Helper.ofFunc(fun x -> Foo.F x)
+let es = new ExpressionSerializer(new BinarySerializer())
+let bin = es.SerializeBinary(e)
+let u = es.DeserializeBinary(bin)
+
 
 [<Cloud>]
 let ic () = CloudQueryExpr.compile<int seq>(cq)
@@ -37,3 +55,6 @@ let ic () = CloudQueryExpr.compile<int seq>(cq)
 rt.Run <@ ic () @>
 
 rt.Run <@ cloud { return "Hi" } @>
+
+
+

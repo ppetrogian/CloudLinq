@@ -10,6 +10,7 @@ using LinqOptimizer.Core;
 using Nessos.MBrace.Client;
 using CloudLinq.Core;
 using Microsoft.FSharp.Core;
+using Runtime = Nessos.MBrace.Client.MBraceRuntime;
 
 namespace CloudLinq.MBrace.CSharp
 {
@@ -18,19 +19,7 @@ namespace CloudLinq.MBrace.CSharp
     /// </summary>
     public static class Extensions
     {
-        public static MBraceRuntime InitLocal(int nodes, string path)
-        {
-            MBraceSettings.MBracedExecutablePath = path;
-            MBraceSettings.StoreProvider = StoreProvider.LocalFS;
-
-            return MBraceRuntime.InitLocal(nodes, 
-                        FSharpOption<string>.None,
-                        FSharpOption<StoreProvider>.None,
-                        FSharpOption<bool>.None,
-                        FSharpOption<bool>.None);
-        }
-
-        public static T Run<T>(this ICloudQueryExpr<T> query, MBraceRuntime runtime)
+        public static T Run<T>(this ICloudQueryExpr<T> query, Runtime runtime)
         {
             var expr = MBraceQueryCompiler.compileAsExpr<T>(query.Expr);
             return runtime.Run<T>(expr, FSharpOption<string>.None);
