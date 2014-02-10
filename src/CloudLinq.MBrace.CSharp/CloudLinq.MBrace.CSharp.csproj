@@ -69,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CloudLinq.Base\CloudLinq.Base.csproj">
-      <Project>{194be9f7-7fb5-44d9-a8f1-564a5b85e0c6}</Project>
+      <Project>{d03c4f5b-910d-400d-b9d7-f1d0f6edd942}</Project>
       <Name>CloudLinq.Base</Name>
     </ProjectReference>
     <ProjectReference Include="..\CloudLinq.Core\CloudLinq.Core.fsproj">
