@@ -2702,6 +2702,21 @@ Override current configuration with the one given in the parameter.
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Nessos.MBrace.Actors.Cluster.Log">
 
 </member>

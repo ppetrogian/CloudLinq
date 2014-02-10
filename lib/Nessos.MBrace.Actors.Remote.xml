@@ -167,6 +167,120 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Actors.Remote.ConnectionPool.CountdownLatch.WaitToZero">
+<summary>
+Spin-wait until the latch is reset
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Actors.Remote.ConnectionPool.CountdownLatch.Increment">
+<summary>
+Set the latch
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Actors.Remote.ConnectionPool.CountdownLatch.Decrement">
+<summary>
+Reset the latch
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Nessos.MBrace.Actors.Remote.ConnectionPool">
 
 </member>
@@ -1352,6 +1466,30 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Nessos.MBrace.Actors.Remote.TcpProtocol.Bidirectional">
 
 </member>
@@ -1443,6 +1581,9 @@
 
 </member>
 <member name="T:Nessos.MBrace.Actors.Remote.TcpProtocol.Publish">
+
+</member>
+<member name="">
 
 </member>
 <member name="">

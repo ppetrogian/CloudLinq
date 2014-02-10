@@ -1518,6 +1518,17 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FsPickler.Emit.EnvItem`1">
+<summary>
+ a descriptor for local variables or parameters in emitted IL
+</summary>
+</member>
 <member name="M:FsPickler.Emit.readInt(FsPickler.Emit.EnvItem{FsPickler.Reader},System.Reflection.Emit.ILGenerator)">
 <summary>
  reads an integer and push to stack
@@ -1622,6 +1633,9 @@
 
 </member>
 <member name="T:FsPickler.Emit.ReflectedPicklerAPI">
+
+</member>
+<member name="">
 
 </member>
 <member name="">
@@ -2596,6 +2610,11 @@
 </member>
 <member name="">
 
+</member>
+<member name="P:FsPickler.Utils.isAssignableFromArray">
+<summary>
+ checks if instances of given type can be arrays
+</summary>
 </member>
 <member name="">
 
