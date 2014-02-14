@@ -11,7 +11,9 @@
 #r @"..\..\packages\LinqOptimizer.FSharp.0.5.2\lib\LinqOptimizer.Core.dll"
 #r @"..\..\packages\LinqOptimizer.FSharp.0.5.2\lib\LinqOptimizer.FSharp.dll"
 #r @"..\..\packages\Serialize.Linq.1.1.4\lib\net45\Serialize.Linq.dll"
+#r @"..\..\packages\FsPickler.0.8.5.1\lib\net45\FsPickler.dll"
 #r @".\bin\Debug\CloudLinq.Core.dll"
+
 
 open CloudLinq.Core
 open Nessos.MBrace
@@ -29,6 +31,8 @@ open Serialize.Linq.Interfaces
 open Serialize.Linq.Extensions
 open Serialize.Linq.Nodes
 open Serialize.Linq.Serializers
+
+open FsPickler
 
 let rt = MBrace.InitLocal 4
 
@@ -56,5 +60,13 @@ rt.Run <@ ic () @>
 
 rt.Run <@ cloud { return "Hi" } @>
 
+let cq = CloudQueryExpr.RangeGenerator(new SerializableExpression(Expression.Constant(1)), new SerializableExpression(Expression.Constant(10)))
+let pkg = new CloudQueryPackage(cq)
+pkg.GetQuery()
 
+let fsp = new FsPickler()
+let ms = new IO.MemoryStream()
+fsp.Serialize<CloudQueryPackage>(ms, pkg)
+ms.Position <- 0L
 
+let pkg' = fsp.Deserialize<CloudQueryPackage>(ms) 

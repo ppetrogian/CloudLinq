@@ -32,6 +32,10 @@
     <DocumentationFile>bin\Release\DistributedLinq.Core.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FsPickler">
+      <HintPath>..\..\packages\FsPickler.0.8.5.1\lib\net45\FsPickler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="LinqOptimizer.Base">
       <HintPath>..\..\packages\LinqOptimizer.FSharp.0.5.2\lib\LinqOptimizer.Base.dll</HintPath>
       <Private>True</Private>
@@ -56,6 +60,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyAnalysis.fs" />
     <Compile Include="SerializableExpression.fs" />
     <Compile Include="CloudQueryExpr.fs" />
     <None Include="Script.fsx" />

@@ -24,8 +24,7 @@ namespace CloudLinq.MBrace.CSharp.Tests
         {
             MBraceSettings.MBracedExecutablePath = @"C:\dev\github-repositories\CloudLinq\lib\mbraced.exe";
             MBraceSettings.StoreProvider = StoreProvider.LocalFS;
-
-           // var rt = MBrace.InitLocal(3);
+            var rt = MBrace.InitLocal(3);
 
             var q = Extensions.Range(1, 10)
                     .Select(x => inc(x))
@@ -33,13 +32,7 @@ namespace CloudLinq.MBrace.CSharp.Tests
                     .Select(x => inc(x))
                     .Select(x => inc(x));
 
-            //var raw = File.ReadAllBytes(typeof(Program).Assembly.Location);
-            //MBrace.LoadAssembly(rt, raw);
-
-            Expression<Func<int, int>> e = x => inc(x);
-            var dps = MBrace.GatherDependencies(e);
-
-            //var r = q.Run(rt);
+            var r = q.Run(rt);
 
             //var es = new ExpressionSerializer(new JsonSerializer());
             //var t = es.SerializeText(e);

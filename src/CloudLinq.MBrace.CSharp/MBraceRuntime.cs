@@ -7,6 +7,8 @@ using Microsoft.FSharp.Core;
 using Nessos.MBrace.Client;
 using System.Reflection;
 using Runtime = Nessos.MBrace.Client.MBraceRuntime;
+using System.Linq.Expressions;
+using CloudLinq.Core;
 
 namespace CloudLinq.MBrace.CSharp
 {
@@ -41,21 +43,5 @@ namespace CloudLinq.MBrace.CSharp
                                      debugOpt,
                                      backgroundOpt);
         }
-
-        public static void LoadAssembly(this Runtime rt, byte [] rawAssembly)
-        {
-            var r = rt.Run(MBraceQueryCompiler.loadAssembly(rawAssembly), FSharpOption<string>.None);
-        }
-
-        public static object [] GetDependencies(object obj)
-        {
-            return MBraceQueryCompiler.gatherTypesInObjectGraph(obj);
-        }
-
-        public static object[] GatherDependencies(object obj)
-        {
-            return MBraceQueryCompiler.gatherDependencies(new Assembly [] { obj.GetType().Assembly });
-        }
-
     }
 }
