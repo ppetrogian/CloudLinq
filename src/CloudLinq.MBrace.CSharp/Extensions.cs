@@ -19,14 +19,6 @@ namespace CloudLinq.MBrace.CSharp
     /// </summary>
     public static class Extensions
     {
-        public static T Run<T>(this ICloudQueryExpr<T> query, Runtime runtime)
-        {
-            var package = new CloudQueryPackage(query.Expr);
-            var expr = MBraceQueryCompiler.compilePackageAsExpr<T>(package);
-            return runtime.Run<T>(expr, FSharpOption<string>.None);
-        }
-        
-
         /// <summary>
         /// Enables a gpu query.
         /// </summary>

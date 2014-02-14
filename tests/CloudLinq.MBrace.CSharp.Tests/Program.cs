@@ -22,15 +22,21 @@ namespace CloudLinq.MBrace.CSharp.Tests
             MBraceSettings.StoreProvider = StoreProvider.LocalFS;
             var rt = MBrace.InitLocal(3);
 
-            var q1 = Extensions.Range(1, 10)
-                     .Select(x => -MyType.Abs(x));
+            using (var ctx = new MBraceCloudContext(rt))
+            {
+                var q1 = Extensions.Range(1, 10)
+                         .Select(x => -MyType.Abs(x));
 
-            var r1 = q1.Run(rt);
+                var r1 = ctx.Run(q1);
+            }
 
-            var q2 = Extensions.Range(1, 10)
-                     .Select(x => MyType.Binomial(x,2));
+            using (var ctx = new MBraceLocalCloudContext(3))
+            {
+                var q2 = Extensions.Range(1, 10)
+                         .Select(x => MyType.Binomial(x, 2));
 
-            var r2 = q2.Run(rt);
+                var r2 = ctx.Run(q2);
+            }
         }
     }
 }
