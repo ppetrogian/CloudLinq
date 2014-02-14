@@ -22,8 +22,7 @@
                             traverse t acc
                         else
                             let d = h.GetReferencedAssemblies() 
-                                    |> Seq.choose (fun a -> AppDomain.CurrentDomain.GetAssemblies() 
-                                                            |> Array.tryFind (fun n -> n.GetName() = a))
+                                    |> Seq.map (fun name -> Assembly.ReflectionOnlyLoad(name.FullName))
                                     |> Seq.toList
                             traverse (d @ t) (h :: acc)
                 traverse (Seq.toList dependencies) [] :> _
@@ -58,8 +57,8 @@
                 base.Visit(expr) 
 
     module DependencyAnalysis =
+        let private da = new DependencyAnalysisVisitor()
         let GetAssemblies(expr : Expression) : seq<Assembly>  =
-            let da = new DependencyAnalysisVisitor()
             da.Visit(expr) |> ignore
             da.GetDependencies()
 

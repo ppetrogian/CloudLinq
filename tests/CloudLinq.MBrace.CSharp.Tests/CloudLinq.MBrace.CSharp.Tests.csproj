@@ -89,6 +89,10 @@
       <Project>{e932708c-d877-47ef-8df4-9fdaba636ef8}</Project>
       <Name>CloudLinq.MBrace.CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CloudLinq.MBrace.CSharp.Tests.AssemblyDependencyTest\CloudLinq.MBrace.CSharp.Tests.AssemblyDependencyTest.csproj">
+      <Project>{ecbb67ab-f97b-440d-82da-031b3d43ee18}</Project>
+      <Name>CloudLinq.MBrace.CSharp.Tests.AssemblyDependencyTest</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

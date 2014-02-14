@@ -151,27 +151,16 @@ module CloudQueryExpr =
         fsp.Deserialize<CloudQueryExpr>(ms)        
 
 [<Serializable>]
-type CloudQueryPackage (queryRaw : byte []) =
+type CloudQueryPackage (queryRaw : byte [], assemblies : byte [] []) =
 
-    member this.GetDependencies () = 
-        CloudQueryExpr.getDependencies <| this.GetQuery()
     member this.GetQuery () = 
+        let appDomain = AppDomain.CurrentDomain.GetAssemblies()
+        assemblies |> Array.iter(fun raw -> Assembly.Load(raw) |> ignore)
         CloudQueryExpr.ofRawQuery queryRaw
- 
-    interface ISerializable with
-        override this.GetObjectData(info : SerializationInfo, context : StreamingContext) =
-            let dps = this.GetDependencies()
-                      |> Seq.map (fun asm -> let loc = asm.Location
-                                             File.ReadAllBytes(loc))
-                      |> Seq.toArray
-            info.AddValue("assemblies", dps, typeof<byte [] []>)
-            info.AddValue("queryRaw", queryRaw, typeof<byte []>)
-
-    new(info : SerializationInfo, context : StreamingContext) =
-        let dps = info.GetValue("assemblies", typeof<byte [] []>) :?> byte [] []
-        let query = info.GetValue("queryRaw", typeof<byte []>) :?> byte []
-        dps |> Array.iter(fun raw -> Assembly.Load(raw) |> ignore)
-        CloudQueryPackage(query)
 
     new(query : CloudQueryExpr) =
-        CloudQueryPackage(CloudQueryExpr.toRawQuery query)
+        let assemblies = CloudQueryExpr.getDependencies query
+                         |> Seq.map (fun asm -> let loc = asm.Location
+                                                File.ReadAllBytes(loc))
+                         |> Seq.toArray
+        CloudQueryPackage(CloudQueryExpr.toRawQuery query, assemblies)
