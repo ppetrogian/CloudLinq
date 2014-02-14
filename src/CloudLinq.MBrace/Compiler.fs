@@ -19,7 +19,7 @@ module MBraceQueryCompiler =
         f.Invoke
 
     [<Cloud>]
-    let compilePackage<'T>(package : CloudQueryPackage) : ICloud<'T> =
+    let private compilePackage<'T>(package : CloudQueryPackage) : ICloud<'T> =
         cloud { 
             let f = compile_aux(package.GetQuery())   
             return f() 
@@ -28,14 +28,3 @@ module MBraceQueryCompiler =
     [<Cloud>]
     let compilePackageAsExpr<'T>(package : CloudQueryPackage) =
         <@ compilePackage<'T>(package)  @>
-
-    [<Cloud>]
-    let compile<'T>(expr : CloudQueryExpr) : ICloud<'T> =
-        cloud { 
-            let f = compile_aux(expr)   
-            return f() 
-        }
-
-    [<Cloud>]
-    let compileAsExpr<'T>(expr : CloudQueryExpr) =
-        <@ compile<'T>(expr)  @>

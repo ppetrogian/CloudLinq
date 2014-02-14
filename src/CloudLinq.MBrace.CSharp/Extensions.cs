@@ -22,11 +22,7 @@ namespace CloudLinq.MBrace.CSharp
         public static T Run<T>(this ICloudQueryExpr<T> query, Runtime runtime)
         {
             var package = new CloudQueryPackage(query.Expr);
-            var dps = package.GetDependencies();
             var expr = MBraceQueryCompiler.compilePackageAsExpr<T>(package);
-
-            //var expr = MBraceQueryCompiler.compileAsExpr<T>(query.Expr);
-
             return runtime.Run<T>(expr, FSharpOption<string>.None);
         }
         
