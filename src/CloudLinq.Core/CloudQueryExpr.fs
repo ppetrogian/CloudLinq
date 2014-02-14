@@ -154,7 +154,6 @@ module CloudQueryExpr =
 type CloudQueryPackage (queryRaw : byte [], assemblies : byte [] []) =
 
     member this.GetQuery () = 
-        let appDomain = AppDomain.CurrentDomain.GetAssemblies()
         assemblies |> Array.iter(fun raw -> Assembly.Load(raw) |> ignore)
         CloudQueryExpr.ofRawQuery queryRaw
 
