@@ -31,17 +31,6 @@ namespace CloudLinq.MBrace.CSharp.Tests
                      .Select(x => MyType.Binomial(x,2));
 
             var r2 = q2.Run(rt);
-
-            //var es = new ExpressionSerializer(new JsonSerializer());
-            //var t = es.SerializeText(e);
-            //var ee = es.DeserializeText(t);
-
-            //var es = new ExpressionSerializer(new BinarySerializer());
-            //Expression<Func<int, int>> e = x => sqr(x);
-            //var fs = File.Create(@"c:\users\krontogiannis\desktop\foo.txt");
-            //es.Serialize(fs, e);
-            //var ffs = File.Open(@"c:\users\krontogiannis\desktop\foo.txt", FileMode.Open);
-            //var ee = es.Deserialize(ffs);
         }
     }
 }
